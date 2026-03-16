@@ -1,22 +1,3 @@
-# 写作前面
-
-本项目的 GITHUB 开源地址：[https://github.com/wardseptember/notes](https://github.com/wardseptember/notes)
-
-如果你在阅读本项目的过程中有发现不明白或者错误的地方，请随时到项目地址发布 issue 或者 fork 项目后发布 PR 帮助作者改善！不胜感激！
-# Notes
-
-[![stars](https://badgen.net/github/stars/wardseptember/notes?icon=github&color=4ab8a1)](https://github.com/wardseptember/notes) [![forks](https://badgen.net/github/forks/wardseptember/notes?icon=github&color=4ab8a1)](<https://github.com/wardseptember/notes>)
-
-
-
-#### 在线阅读
-
-* [Github Pages](https://wardseptember.github.io/notes/#/)
-
-* [Gitee Pages](https://wardseptember.gitee.io/mynotes)
-
-同步更新哦
-
 ---
 
 ## 核心内容
@@ -136,10 +117,4 @@
 * [Maven笔记](/dcos/Maven笔记.png)
 
 
-## GPL v2.0
-[LICENSE](https://github.com/wardseptember/notes/blob/master/LICENSE)
-
-## 联系方式
-
-- E-mail : <wardseptember@163.com>
 

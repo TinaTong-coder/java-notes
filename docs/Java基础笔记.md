@@ -425,7 +425,7 @@ interface Person extends Hello {
 
 ```xml-dtd
 ┌───────────────┐
-│   Iterable    │		
+│   Iterable    │        
 └───────────────┘
         ▲                ┌───────────────────┐
         │                │      Object       │
@@ -885,7 +885,7 @@ import java.util.StringJoiner;
 public class Main {
     public static void main(String[] args) {
         String[] names = {"Bob", "Alice", "Grace"};
-      	//结果用,分割，第二个参数是开头，第三个参数是结尾
+          //结果用,分割，第二个参数是开头，第三个参数是结尾
         var sj = new StringJoiner(", ", "Hello ", "!");
         for (String name : names) {
             sj.add(name);
@@ -1197,11 +1197,11 @@ object类中包含的方法：
 public final native Class<?> getClass();
 public native int hashCode();
 public boolean equals(Object obj) {
-	return (this == obj);
+    return (this == obj);
 }
 protected native Object clone() throws CloneNotSupportedException;
 public String toString() {
-	return getClass().getName() + "@" + Integer.toHexString(hashCode());
+    return getClass().getName() + "@" + Integer.toHexString(hashCode());
 }
 public final native void notify();
 public final native void notifyAll();
@@ -2175,7 +2175,7 @@ String last = (String) p.getLast();
 
 ```java
 public class Main {  
-	public static void main(String[] args) {
+    public static void main(String[] args) {
     Pair<Integer> p = new Pair<>(123, 456);
     int n = add(p);
     System.out.println(n);
@@ -2321,10 +2321,10 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         List<Integer> list = List.of(12, 34, 56);
-      	//list转array
+          //list转array
         Number[] array = list.toArray(new Number[list.size()]);
-      	//array转list
-      	List<Number> list = List.of(array);
+          //array转list
+          List<Number> list = List.of(array);
         for (Number n : array) {
             System.out.println(n);
         }

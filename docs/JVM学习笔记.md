@@ -297,7 +297,7 @@ String str1 = "str";
 String str2 = "ing";
 
 String str3 = "str" + "ing";//常量池中的对象
-String str4 = str1 + str2; //在堆上创建的新的对象	  
+String str4 = str1 + str2; //在堆上创建的新的对象      
 String str5 = "string";//常量池中的对象
 System.out.println(str3 == str4);//false
 System.out.println(str3 == str5);//true
@@ -379,7 +379,7 @@ System.out.println(i3 == i4);// 输出 false
 */
 public static Integer valueOf(int i) {
   if (i >= IntegerCache.low && i <= IntegerCache.high)
-  		return IntegerCache.cache[i + (-IntegerCache.low)];
+          return IntegerCache.cache[i + (-IntegerCache.low)];
   return new Integer(i);
 }
 ```
@@ -553,15 +553,15 @@ Java 堆是垃圾收集器管理的主要区域，因此也被称作**GC 堆（G
 ````java
 public class ReferenceCountingGc {
     Object instance = null;
-	public static void main(String[] args) {
-		ReferenceCountingGc objA = new ReferenceCountingGc();
-		ReferenceCountingGc objB = new ReferenceCountingGc();
-		objA.instance = objB;
-		objB.instance = objA;
-		objA = null;
-		objB = null;
+    public static void main(String[] args) {
+        ReferenceCountingGc objA = new ReferenceCountingGc();
+        ReferenceCountingGc objB = new ReferenceCountingGc();
+        objA.instance = objB;
+        objB.instance = objA;
+        objA = null;
+        objB = null;
 
-	}
+    }
 }
 ````
 

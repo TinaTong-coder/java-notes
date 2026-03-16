@@ -176,14 +176,14 @@ server {
     #}
 }
 server {
-	listen 9001;
-	server_name localhost;
-	location ~ /edu/ {
-		proxy_pass http:localhost:8080;
-	}
-	location ~ /vod/ {
-		proxy_pass http:localhost:8081;
-	}
+    listen 9001;
+    server_name localhost;
+    location ~ /edu/ {
+        proxy_pass http:localhost:8080;
+    }
+    location ~ /vod/ {
+        proxy_pass http:localhost:8081;
+    }
 }
 ```
 
@@ -193,8 +193,8 @@ server {
 
 ```
 upstream myserver {
-	server localhost:8080;
-	server localhost:8081;
+    server localhost:8080;
+    server localhost:8081;
 }
 server {
     listen       80;
@@ -248,8 +248,8 @@ weight代表权重，权重越高，分配请求越多。
 
 ```
 upstream myserver {
-	server localhost:8080 weight=1;
-	server localhost:8081 weight=1;
+    server localhost:8080 weight=1;
+    server localhost:8081 weight=1;
 }
 ```
 
@@ -259,9 +259,9 @@ upstream myserver {
 
 ```
 upstream myserver {
-	iphash;
-	server localhost:8080;
-	server localhost:8081;
+    iphash;
+    server localhost:8080;
+    server localhost:8081;
 }
 ```
 
@@ -271,9 +271,9 @@ upstream myserver {
 
 ```
 upstream myserver {
-	fair;
-	server localhost:8080;
-	server localhost:8081;
+    fair;
+    server localhost:8080;
+    server localhost:8081;
 }
 ```
 
@@ -286,8 +286,8 @@ upstream myserver {
 
 ```
 upstream myserver {
-	server localhost:8080;
-	server localhost:8081;
+    server localhost:8080;
+    server localhost:8081;
 }
 server {
     listen       80;
@@ -364,9 +364,9 @@ global_defs {
    vrrp_gna_interval 0
 }
 vrrp_script chk_http_port {
-	script "/usr/local/src/nginx_check.sh"
-	interval 2
-	weight 2
+    script "/usr/local/src/nginx_check.sh"
+    interval 2
+    weight 2
 }
 vrrp_instance VI_1 {
     state MASTER
@@ -506,11 +506,11 @@ nginx_check.sh
 #!/bin/bash
 A=`ps -C nginx -no-header |wc -l`
 if [ $A -eq 0 ];then
-	/etc/nginx/sbin/nginx
-	sleep 2
-	if [`ps -C nginx -no-header |wc -l` -eq 0];then
-		killall keepalived
-	fi
+    /etc/nginx/sbin/nginx
+    sleep 2
+    if [`ps -C nginx -no-header |wc -l` -eq 0];then
+        killall keepalived
+    fi
 fi
 ```
 

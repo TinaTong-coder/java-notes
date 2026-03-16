@@ -152,16 +152,16 @@ int ret = select( largest_sock + 1, &fd_in, &fd_out, NULL, &tv );
 
 // Check if select actually succeed
 if ( ret == -1 )
-    // report error and abort
+// report error and abort
 else if ( ret == 0 )
-    // timeout; no event detected
+// timeout; no event detected
 else
 {
     if ( FD_ISSET( sock1, &fd_in ) )
-        // input event on sock1
+    // input event on sock1
 
     if ( FD_ISSET( sock2, &fd_out ) )
-        // output event on sock2
+    // output event on sock2
 }
 ```
 
@@ -200,19 +200,19 @@ fds[1].events = POLLOUT;
 int ret = poll( &fds, 2, 10000 );
 // Check if poll actually succeed
 if ( ret == -1 )
-    // report error and abort
+// report error and abort
 else if ( ret == 0 )
-    // timeout; no event detected
+// timeout; no event detected
 else
 {
     // If we detect the event, zero it out so we can reuse the structure
     if ( fds[0].revents & POLLIN )
-        fds[0].revents = 0;
-        // input event on sock1
+    fds[0].revents = 0;
+    // input event on sock1
 
     if ( fds[1].revents & POLLOUT )
-        fds[1].revents = 0;
-        // output event on sock2
+    fds[1].revents = 0;
+    // output event on sock2
 }
 ```
 
@@ -259,7 +259,7 @@ epoll 对多线程编程更有友好，一个线程调用了 epoll_wait() 另一
 int pollingfd = epoll_create( 0xCAFE );
 
 if ( pollingfd < 0 )
- // report error
+// report error
 
 // Initialize the epoll structure in case more members are added in future
 struct epoll_event ev = { 0 };
@@ -273,7 +273,7 @@ ev.events = EPOLLIN | EPOLLONESHOT;
 // Add the descriptor into the monitoring list. We can do it even if another thread is
 // waiting in epoll_wait - the descriptor will be properly added
 if ( epoll_ctl( epollfd, EPOLL_CTL_ADD, pConnection1->getSocket(), &ev ) != 0 )
-    // report error
+// report error
 
 // Wait for up to 20 events (assuming we have added maybe 200 sockets before that it may happen)
 struct epoll_event pevents[ 20 ];
@@ -282,9 +282,9 @@ struct epoll_event pevents[ 20 ];
 int ready = epoll_wait( pollingfd, pevents, 20, 10000 );
 // Check if epoll actually succeed
 if ( ret == -1 )
-    // report error and abort
+// report error and abort
 else if ( ret == 0 )
-    // timeout; no event detected
+// timeout; no event detected
 else
 {
     // Check if any events detected
@@ -295,7 +295,7 @@ else
             // Get back our connection pointer
             Connection * c = (Connection*) pevents[i].data.ptr;
             c->handleReadEvent();
-         }
+        }
     }
 }
 ```

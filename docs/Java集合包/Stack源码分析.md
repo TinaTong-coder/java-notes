@@ -70,7 +70,7 @@ class Stack<E> extends Vector<E> {
         return size() == 0;
     }
 
-	// 返回o所在的索引位置
+    // 返回o所在的索引位置
     public synchronized int search(Object o) {
         int i = lastIndexOf(o);
 

@@ -425,7 +425,7 @@ You have unmerged paths.
 Unmerged paths:
   (use "git add <file>..." to mark resolution)
 
-	both modified:   readme.txt
+    both modified:   readme.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
@@ -576,7 +576,7 @@ On branch feature-vulcan
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
-	new file:   vulcan.py
+    new file:   vulcan.py
 
 $ git commit -m "add feature vulcan"
 [feature-vulcan 287773e] add feature vulcan

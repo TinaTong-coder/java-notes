@@ -71,7 +71,7 @@ sizeCtl在初始化时一直出现，在扩容的时候也有使用。
 
 ```java
     static final int HASH_BITS = 0x7fffffff; // usable bits of normal node hash
-	static final int spread(int h) {
+    static final int spread(int h) {
         return (h ^ (h >>> 16)) & HASH_BITS;
     }
 ```
@@ -82,9 +82,9 @@ sizeCtl在初始化时一直出现，在扩容的时候也有使用。
 
 ```java
     private static final sun.misc.Unsafe U;
-	// 直接操作内存
+    // 直接操作内存
     U = sun.misc.Unsafe.getUnsafe();
-	/**
+    /**
      * 寻找指定数组在内存中i位置的数据
      */
     @SuppressWarnings("unchecked")

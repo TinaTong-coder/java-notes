@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 fix_code_indent.py --dry-run)",
+      "Bash(python3 fix_code_indent.py)",
+      "Bash(git add *.md docs/ index.html)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfix: 修复代码缩进问题\n\n- 统一所有文件使用4个空格缩进，移除tab混用\n- 修复markdown文件中Java代码块的语法缩进\n- 修复index.html的缩进格式\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push origin master)",
+      "Bash(git pull origin master --rebase)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
